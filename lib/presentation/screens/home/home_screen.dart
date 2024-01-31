@@ -95,11 +95,12 @@ class _CustomListTitle extends StatelessWidget {
 
         //opcion con router:
         // opcion para que cada item tenga su propio camino
-        // context.push(menuItem.link);
+         context.push(menuItem.link);
 
         //opcion usando los nombres
-        context.pushNamed(CardsScreen.name);
+        //context.pushNamed(CardsScreen.name);
         // tambien se puede hacer con cada uno, pero se necesitaria declarar en munu items el nombre del parametro nombre
+        // algo como context.push(menuItem.link);
 
         // opcion con rutas
 
