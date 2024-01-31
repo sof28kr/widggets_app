@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widggets_app/config/menu/menu_items.dart';
 
 class HomeScreen  extends StatelessWidget {
   const HomeScreen ({super.key});
@@ -10,6 +11,82 @@ class HomeScreen  extends StatelessWidget {
         title: const Text('Flutter + Material 3'),
         centerTitle: false,
       ),
+      body: const _HomeView(),
+      // se extrae el widget en el mismo ARCHIVO
+      //  se usa una variable rpivada 
     );
   }
 }
+
+
+
+
+class _HomeView extends StatelessWidget {
+  const _HomeView();
+
+  @override
+  Widget build(BuildContext context) {
+
+    // appMenuItems
+    // para exportar la dependencia
+
+    // Esta es una lista para la homeScreen
+
+    // forma basica
+
+    //return ListView.builder(
+      //physics: BouncingScrollPhysics(),
+      //delimita el numero de
+      //itemCount: appMenuItems.length,
+      //itemBuilder:(context, index) {
+        //final menuItem = appMenuItems[index];
+        // return Text(menuItem.tittle);
+        // solo regresa los textos como una lista
+        //return ListTile(
+          //title: Text(menuItem.tittle),
+          //subtitle: Text(menuItem.Subtitle),
+        //);
+      //},
+    //);
+
+    return ListView.builder(
+      physics: BouncingScrollPhysics(),
+      //delimita el numero de
+      itemCount: appMenuItems.length,
+      itemBuilder:(context, index) {
+        final menuItem = appMenuItems[index];
+        // return Text(menuItem.tittle);
+        // solo regresa los textos como una lista
+        return _CustomListTitle(menuItem: menuItem);
+      },
+    );
+
+  }
+}
+
+class _CustomListTitle extends StatelessWidget {
+  const _CustomListTitle({
+    required this.menuItem,
+  });
+
+  final MenuItem menuItem;
+
+  @override
+  Widget build(BuildContext context) {
+
+    // trae el color el apptheme
+    final colors = Theme.of(context).colorScheme;
+
+    return ListTile(
+      leading: Icon(menuItem.icon, color: colors.primary),
+      //aplica el color primario de la paleta selecionada
+      trailing: Icon(Icons.arrow_forward_ios_rounded, color: colors.primary,),
+      title: Text(menuItem.tittle),
+      subtitle: Text(menuItem.Subtitle),
+      onTap: (){
+        // TODO navegar a otra pantalla
+      },
+    );
+  }
+}
+

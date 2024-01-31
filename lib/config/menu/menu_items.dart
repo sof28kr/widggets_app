@@ -1,5 +1,7 @@
 
 
+// son las opciones del menu
+
 import 'package:flutter/material.dart';
 // import 'package:flutter/material.dart' show IconData;
 // hace que solo se muestre los icons del paquete
