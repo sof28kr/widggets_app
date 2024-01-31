@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widggets_app/config/menu/menu_items.dart';
 import 'package:widggets_app/presentation/screens/home/botones_app/buttons_screen.dart';
+import 'package:widggets_app/presentation/screens/home/cards/cards_screen.dart';
 
 class HomeScreen  extends StatelessWidget {
+
+  // static hace que el nombre no cambie, algo parecido al const
+  // static tambien nos ayuda a no tener que crear instancias con este parametro
+  static const String name = 'Home_Screen';
+
   const HomeScreen ({super.key});
 
   @override
@@ -88,8 +94,12 @@ class _CustomListTitle extends StatelessWidget {
       onTap: (){
 
         //opcion con router:
+        // opcion para que cada item tenga su propio camino
+        // context.push(menuItem.link);
 
-        context.push(menuItem.link);
+        //opcion usando los nombres
+        context.pushNamed(CardsScreen.name)
+        // tambien se puede hacer con cada uno, pero se necesitaria declarar en munu items el nombre del parametro nombre
 
         // opcion con rutas
 
