@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widggets_app/config/menu/menu_items.dart';
-import 'package:widggets_app/presentation/screens/home/botones_app/buttons_screen.dart';
-import 'package:widggets_app/presentation/screens/home/cards/cards_screen.dart';
+
 
 class HomeScreen  extends StatelessWidget {
 
