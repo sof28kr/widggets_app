@@ -57,7 +57,7 @@ class _HomeView extends StatelessWidget {
     //);
 
     return ListView.builder(
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       //delimita el numero de
       itemCount: appMenuItems.length,
       itemBuilder:(context, index) {
